@@ -6,18 +6,83 @@ from validator import Validator
 def vd():
     return Validator()
 
-def test_validar_cpf_tamanho(vd):
-    assert vd.validar_cpf_tamanho('111-222.333-99'), "Tamanho de CPF invalido"
+@pytest.mark.parametrize("valor", [
+    "11122233344",
+    "111.222.333-44",
+    "1112223334",
+    "111-222-333.4",
+])
+def test_validar_tamanho_cpf(vd, valor):
+    assert vd.validar_cpf(valor), "Tamanho de CPF invalido"
 
-def test_validar_cpf_formato(vd):
-    assert vd.validar_cpf_formato('123.222.333-99'), "Formato de CPF invalido"
+@pytest.mark.parametrize("valor", [
+    "11122233344",
+    "111.222.333-44",
+    "111.222.333",
+    "111-222-333.44",
+])
+def test_validar_formato_cpf(vd, valor):
+    assert vd.validar_cpf(valor), "Formato de CPF invalido"
 
-def test_validar_cpf_texto(vd):
-    numero = "teste"
-    assert vd.validar_cpf_texto(numero), "CPF informado nao esta no formato de texto"
+@pytest.mark.parametrize("valor", [
+    11122233344,
+    "111.222.333-44",
+    111.222,
+    "11122233344",
+])
+def test_validar_entrada_cpf(vd, valor):
+    assert vd.validar_cpf(valor), "CPF nao esta no formato texto"
 
-def test_validar_cep(vd):
-    texto_cep, tamanho_cep, formato_cep = vd.validar_cep("11111-999")
-    assert texto_cep, "CEP informado nao esta no formato de texto"
-    assert tamanho_cep, "Tamanho de CEP invalido"
-    assert formato_cep, "Formato de CEP invalido"
+@pytest.mark.parametrize("valor", [
+    "11222333",
+    "1112223",
+    "11222-333",
+    "1112223334",
+])
+def test_validar_tamanho_cep(vd, valor):
+    assert vd.validar_cep(valor), "Tamanho de CEP invalido"
+
+@pytest.mark.parametrize("valor", [
+    "00111-333",
+    "11122333",
+    "11122.333",
+    "11-222333",
+])
+def test_validar_formato_cep(vd, valor):
+    assert vd.validar_cep(valor), "Formato de CEP invalido"
+
+@pytest.mark.parametrize("valor", [
+    11122233344,
+    "11222-333",
+    111.222,
+    "11122333",
+])
+def test_validar_entrada_cep(vd, valor):
+    assert vd.validar_cep(valor), "CepEP nao esta no formato texto"
+
+@pytest.mark.parametrize("valor", [
+    "11222333444455",
+    "11.222.333/4444-55",
+    "111222333444455",
+    "11.222.333/4444-555",
+])
+def test_validar_tamanho_cnpj(vd, valor):
+    assert vd.validar_cnpj(valor), "Tamanho de CNPJ invalido"
+
+@pytest.mark.parametrize("valor", [
+    "11222333444455",
+    "11.222.333/4444.55",
+    "11-222-333.4444/55",
+    "11.222.333/4444-55",
+])
+def test_validar_formato_cnpj(vd, valor):
+    assert vd.validar_cnpj(valor), "Formato de CNPJ invalido"
+
+@pytest.mark.parametrize("valor", [
+    11222333444455,
+    "11.222.333/4444-55",
+    111222333,
+    "11222333444455",
+])
+def test_validar_entrada_cnpj(vd, valor):
+    assert vd.validar_cnpj(valor), "CNPJ nao esta no formato texto"
