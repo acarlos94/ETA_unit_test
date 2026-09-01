@@ -1,5 +1,6 @@
 import re
 
+
 class Validator:
     formato_cpf = r"^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$"
     formato_cep = r"^\d{5}\-?\d{3}$"

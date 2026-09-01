@@ -1,5 +1,4 @@
 import pytest
-
 from ..app.validator import Validator
 
 
