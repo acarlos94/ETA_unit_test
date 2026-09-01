@@ -7,9 +7,9 @@ O objetivo do exercício é implementar uma suíte de testes unitários automati
 
 A aplicação possui um módulo validador com regras de negócio específicas para cada tipo de dado. Sua missão é escrever cenários de testes cobrindo o caminho feliz, cenários negativos e casos de borda.
 
-Validador de CPF: Verifica o formato (000.000.000-00 ou apenas números), a quantidade exata de 11 ou 14 dígitos, a rejeição de sequências inválidas conhecidas (ex: 111.111.111-11) e se o valor de entrada é um texto.  
-Validador de CNPJ: Checa a formatação (00.000.000/0001-00 ou apenas dígitos), a extensão de 14 ou 18 dígitos e se o valor de entrada é um texto.  
-Validador de CEP: Avalia se o CEP possui 8 ou 9 dígitos, o suporte à formatação com hífen (00000-000) e se o valor de entrada é um texto.  
+* Validador de CPF: Verifica o formato (000.000.000-00 ou apenas números), a quantidade exata de 11 ou 14 dígitos, a rejeição de sequências inválidas conhecidas (ex: 111.111.111-11) e se o valor de entrada é um texto.  
+* Validador de CNPJ: Checa a formatação (00.000.000/0001-00 ou apenas dígitos), a extensão de 14 ou 18 dígitos e se o valor de entrada é um texto.  
+* Validador de CEP: Avalia se o CEP possui 8 ou 9 dígitos, o suporte à formatação com hífen (00000-000) e se o valor de entrada é um texto.  
 ---
 ### ⚙️️ Configuração do Ambiente
 Acesse a pasta do desafio
