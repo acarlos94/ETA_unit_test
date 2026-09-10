@@ -38,7 +38,7 @@ Para rodar todos os testes unitários:
 ```bash
 pytest
 ```
-Para executar com relatório detalhado (verbose) e relatório de cobertura de código:
+Para executar com relatório detalhado (verbose) e relatório de cobertura de código, mostrando as linhas não cobertas:
 ```bash
-pytest -v --cov=src
+pytest -v --cov=app --cov-report=term-missing
 ```
