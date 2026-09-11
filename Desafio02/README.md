@@ -1,15 +1,21 @@
 # 🧪 Desafio 2 de Testes Unitários com Pytest
 
-O objetivo do exercício é implementar uma suíte de testes unitários automatizados utilizando Pytest para garantir a aplicacao das regras de validação de três identificadores brasileiros: CPF, CNPJ e CEP.
+O objetivo do exercício é incrementar a suíte de testes unitários automatizados criada no Desafio 1 aplicando conceitos avançados, como fixtures, mocking e integracao com pipelines.
 
 ---
 ### 📋 Sobre o Desafio
 
-A aplicação possui um módulo validador com regras de negócio específicas para cada tipo de dado. Sua missão é escrever cenários de testes cobrindo o caminho feliz, cenários negativos e casos de borda.
+Incrementar as classes geradas no Desafio 1, organizando os diretorios e adicionando uma chamada a uma validacao ficticia por servico externo.
 
-* Validador de CPF: Verifica o formato (000.000.000-00 ou apenas números), a quantidade exata de 11 ou 14 dígitos, a rejeição de sequências inválidas conhecidas (ex: 111.111.111-11) e se o valor de entrada é um texto.  
-* Validador de CNPJ: Checa a formatação (00.000.000/0001-00 ou apenas dígitos), a extensão de 14 ou 18 dígitos e se o valor de entrada é um texto.  
-* Validador de CEP: Avalia se o CEP possui 8 ou 9 dígitos, o suporte à formatação com hífen (00000-000) e se o valor de entrada é um texto.  
+* Classe: ServicoCorreios
+* Metodo: valida_cep_api(self, cep)
+
+Adicionar um teste unitario com pytest, incluindo:
+
+* Mocking da classe ServicoCorreios
+* Chamada a valida_cep_api, simulando retorno True em caso de sucesso ou False em falha de validacao
+* Simular um erro de conexao com a excecao requests.exceptions.HTTPError
+
 ---
 ### ⚙️️ Configuração do Ambiente
 Acesse a pasta do desafio
