@@ -20,4 +20,4 @@ boas práticas e refatoração em **Python**, utilizando o framework **Pytest**.
 * Disciplina: Testes Unitários  
 ---
 
-Desenvolvido por Antonio Silva
+Desenvolvido por Antonio Silva e Diego Brandão
